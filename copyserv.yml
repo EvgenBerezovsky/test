@@ -1,0 +1,12 @@
+---
+- name: Copy file to my server
+  hosts: server
+
+  tasks:
+
+    - name: Example copy file to my server
+      copy:
+        src: /home/evgeniy/projects/myfirst/playbooks/copyserv.yml
+        dest: /home/backup.sh
+        owner: root
+        mode: '0644'

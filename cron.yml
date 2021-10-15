@@ -1,0 +1,15 @@
+---
+- name: Creates a cron file under /etc/cron.d
+  hosts: server1
+
+  tasks:
+
+    - name: Example creates a cron backup
+      cron:
+        name: backup.sh
+        weekday: 1
+        minute: 0
+        hour: 13
+        user: root
+        job: "/home/backup.sh >/dev/null 2>&1"
+        cron_file: ansible_backup
